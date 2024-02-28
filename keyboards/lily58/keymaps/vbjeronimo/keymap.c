@@ -1,78 +1,19 @@
 #include QMK_KEYBOARD_H
 
-#define LGUI_A LGUI_T(KC_A)
-#define LALT_S LALT_T(KC_S)
-#define LSFT_D LSFT_T(KC_D)
-#define LCTL_F LCTL_T(KC_F)
-
-#define RCTL_J RCTL_T(KC_J)
-#define RSFT_K RSFT_T(KC_K)
-#define RALT_L LALT_T(KC_L)
-#define RGUI_SC RGUI_T(KC_SCLN)
-
-enum layer_number {
-  _MAIN = 0,
-  _NUMS,
-  _SYMBOLS,
-  _NAV,
-};
-
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-
-[_MAIN] = LAYOUT(
-  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  CW_TOGG, KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                       KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSLS,
-  KC_GRV,  LGUI_A,  LALT_S,  LSFT_D,  LCTL_F,  KC_G,                       KC_H,    RCTL_J,  RSFT_K,  RALT_L,  RGUI_SC, KC_QUOT,
-  KC_RALT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    XXXXXXX,  XXXXXXX, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RALT,
-                XXXXXXX, KC_ESC, KC_SPC, LT(_NUMS, KC_TAB),          LT(_SYMBOLS, KC_BSPC), LT(_NAV, KC_ENT), KC_DEL, XXXXXXX
-),
-
-[_NUMS] = LAYOUT(
-  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  XXXXXXX, KC_F11,  KC_F12,  KC_F13,  KC_F14,  KC_F15,                     XXXXXXX, KC_7,    KC_8,    KC_9,    XXXXXXX, XXXXXXX,
-  XXXXXXX, KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,                     XXXXXXX, KC_4,    KC_5,    KC_6,    XXXXXXX, XXXXXXX,
-  XXXXXXX, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   XXXXXXX,  XXXXXXX, XXXXXXX, KC_1,    KC_2,    KC_3,    XXXXXXX, XXXXXXX,
-                        _______, _______, _______, _______,           _______, KC_0,    KC_DOT, _______
-),
-
-[_SYMBOLS] = LAYOUT(
-  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  XXXXXXX, XXXXXXX ,KC_COLN, KC_EQL,  KC_RABK, XXXXXXX,                     XXXXXXX, KC_MINS, KC_PLUS, KC_LBRC, KC_RBRC, XXXXXXX,
-  XXXXXXX, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,                     KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, XXXXXXX,
-  XXXXXXX, XXXXXXX, KC_LABK, KC_MINS, KC_RABK, XXXXXXX, XXXXXXX,  XXXXXXX,  XXXXXXX, KC_UNDS, KC_UNDS, KC_LCBR, KC_RCBR, XXXXXXX,
-                         _______, _______, _______, _______,          _______, _______, _______, _______
-),
-
-[_NAV] = LAYOUT(
-  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, XXXXXXX,
-  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, QK_BOOT, XXXXXXX, XXXXXXX, KC_HOME, KC_PGDN, KC_PGUP, KC_END,  XXXXXXX,
-                         _______, _______, _______, _______,         _______, _______, _______, _______
-),
-
+	[0] = LAYOUT(KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_Q, KC_W, KC_F, KC_P, KC_G, KC_J, KC_L, KC_U, KC_Y, KC_QUOT, KC_NO, KC_NO, LGUI_T(KC_A), LALT_T(KC_R), LSFT_T(KC_S), LCTL_T(KC_T), KC_D, KC_H, RCTL_T(KC_N), RSFT_T(KC_E), LALT_T(KC_I), RGUI_T(KC_O), KC_NO, KC_NO, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_NO, KC_NO, KC_K, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_NO, KC_NO, KC_ESC, KC_SPC, LT(1,KC_TAB), LT(2,KC_BSPC), LT(3,KC_ENT), LT(5,KC_DEL), KC_NO),
+	[1] = LAYOUT(KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_HASH, KC_EXLM, KC_ASTR, KC_NO, KC_NO, KC_LBRC, KC_COLN, KC_RBRC, KC_GRV, KC_NO, KC_NO, CW_TOGG, KC_DLR, KC_PERC, KC_CIRC, KC_NO, KC_NO, KC_LPRN, KC_EQL, KC_RPRN, KC_PIPE, KC_NO, KC_NO, KC_NO, KC_AT, KC_TILD, KC_AMPR, KC_NO, KC_NO, KC_NO, KC_NO, KC_LCBR, KC_SCLN, KC_RCBR, KC_BSLS, KC_NO, KC_NO, KC_NO, KC_NO, KC_TRNS, KC_UNDS, KC_MINS, KC_PLUS, KC_NO),
+	[2] = LAYOUT(KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_MINS, KC_7, KC_8, KC_9, KC_0, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_PLUS, KC_4, KC_5, KC_6, KC_DOT, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_ASTR, KC_1, KC_2, KC_3, KC_SLSH, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_TRNS, KC_NO, KC_NO, KC_NO),
+	[3] = LAYOUT(KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_F1, KC_F2, KC_F3, KC_F4, TG(4), KC_NO, KC_NO, KC_PSCR, KC_NO, KC_NO, KC_NO, KC_NO, KC_F5, KC_F6, KC_F7, KC_F8, KC_NO, KC_NO, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, KC_NO, KC_NO, KC_F9, KC_F10, KC_F11, KC_F12, KC_NO, KC_NO, KC_NO, KC_NO, KC_HOME, KC_PGDN, KC_PGUP, KC_END, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_TRNS, KC_NO, KC_NO),
+	[4] = LAYOUT(KC_ESC, KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0, KC_MINS, KC_TAB, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P, KC_BSLS, KC_CAPS, KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, KC_L, KC_SCLN, KC_QUOT, KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_NO, KC_NO, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_RSFT, KC_LGUI, KC_LCTL, KC_SPC, KC_LALT, KC_BSPC, LT(3,KC_ENT), KC_DEL, KC_RGUI),
+	[5] = LAYOUT(KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_MPLY, KC_MUTE, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_TRNS, KC_NO)
 };
 
-bool caps_word_press_user(uint16_t keycode) {
-    switch (keycode) {
-        // Keycodes that continue Caps Word, with shift applied.
-        case KC_A ... KC_Z:
-        case KC_MINS:
-        case KC_SCLN:
-            add_weak_mods(MOD_BIT(KC_LSFT));  // Apply shift to next key.
-            return true;
+#if defined(ENCODER_ENABLE) && defined(ENCODER_MAP_ENABLE)
+const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
 
-        // Keycodes that continue Caps Word, without shifting.
-        case KC_1 ... KC_0:
-        case KC_BSPC:
-        case KC_DEL:
-        case KC_UNDS:
-            return true;
-
-        default:
-            return false;  // Deactivate Caps Word.
-    }
-}
+};
+#endif // defined(ENCODER_ENABLE) && defined(ENCODER_MAP_ENABLE)
 
 //SSD1306 OLED update loop, make sure to enable OLED_ENABLE=yes in rules.mk
 #ifdef OLED_ENABLE
