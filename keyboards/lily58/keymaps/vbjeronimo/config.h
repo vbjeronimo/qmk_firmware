@@ -26,8 +26,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // #define MASTER_RIGHT
 // #define EE_HANDS
 
+// Home Row mods setup
 #define QUICK_TAP_TERM 0
 #define TAPPING_TERM 200
+
+// CAPS_WORD setup (pressing both Shifts to enable CAPS_WORD)
+#define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
 
 #undef RGBLED_NUM
 #define RGBLIGHT_EFFECT_BREATHING
